@@ -1,26 +1,16 @@
 import { useState } from "react";
 
-export function Counter() {
-  const [counter, setCounter] = useState(0);
+export function Counter({ initialValue = 0, increment = 1 }) {
+  const [counter, setCounter] = useState(initialValue);
 
   function handleIncrement() {
-    setCounter((x) => x + 1);
-  }
-
-  function handleDecrement() {
-    setCounter((x) => x - 1);
-  }
-
-  function handleReset() {
-    setCounter(0);
+    setCounter((x) => x + increment);
   }
 
   return (
     <div>
-      <h2>I have counted to {counter}</h2>
-      <button onClick={handleIncrement}>Increment</button>
-      <button onClick={handleDecrement}>Decrement</button>
-      <button onClick={handleReset}>Reset</button>
+      <h2>Counter: {counter}</h2>
+      <button onClick={handleIncrement}>Plus</button>
     </div>
   );
 }
