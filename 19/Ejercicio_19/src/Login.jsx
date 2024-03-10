@@ -8,7 +8,7 @@ function createData() {
   };
 }
 
-export function Login() {
+export function Login({ onLogin }) {
   const [data, setData] = useState(createData());
 
   function handleInputChange(event) {
@@ -20,6 +20,10 @@ export function Login() {
     setData((d) => {
       return { ...d, [name]: type == "checkbox" ? checked : value };
     });
+  }
+
+  function handleLogin() {
+    onLogin(data);
   }
 
   return (
@@ -41,6 +45,9 @@ export function Login() {
         checked={data.remember}
         onChange={handleInputChange}
       />
+      <button disabled={!data.username || !data.password} onClick={handleLogin}>
+        Login
+      </button>
     </div>
   );
 }
