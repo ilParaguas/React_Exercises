@@ -1,11 +1,15 @@
 import { useState } from "react";
 
-export function Login() {
-  const [data, setData] = useState({
+function createData() {
+  return {
     username: "",
     password: "",
     remember: false,
-  });
+  };
+}
+
+export function Login() {
+  const [data, setData] = useState(createData());
 
   function handleInputChange(event) {
     const name = event.target.name;
