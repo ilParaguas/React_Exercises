@@ -32,6 +32,10 @@ export function Counter({ initialValue = 0, increment = 1, decrement = 1 }) {
     setCounter(initialValue);
   }
 
+  /*To further improve your solution, consider leveraging the useEffect hook to monitor the counter state changes.
+  This would allow for a more precise update and logging of the counter's direction relative to its previous state or the initialValue.
+  This approach is more aligned with React’s principles of data flow and state management. */
+
   return (
     <div>
       <div>Counter: {counter}</div>
