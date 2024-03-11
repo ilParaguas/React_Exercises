@@ -20,18 +20,23 @@ export function Counter({ initialValue = 0, increment = 1, decrement = 1 }) {
   }
 
   function handleReset() {
+    if (counter < 0) {
+      counterDirection.current = "up";
+      console.log(counterDirection.current);
+    } else if (counter > 0) {
+      counterDirection.current = "down";
+      console.log(counterDirection.current);
+    } else {
+      counterDirection.current = "";
+    }
     setCounter(initialValue);
   }
 
   return (
     <div>
       <div>Counter: {counter}</div>
-      <button ref={counterDirection} onClick={handleIncrement}>
-        Plus
-      </button>
-      <button ref={counterDirection} onClick={handleDecrement}>
-        Minus
-      </button>
+      <button onClick={handleIncrement}>Plus</button>
+      <button onClick={handleDecrement}>Minus</button>
       <button onClick={handleReset}>Reset</button>
     </div>
   );
