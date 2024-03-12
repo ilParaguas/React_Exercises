@@ -17,6 +17,12 @@ export function TodoList() {
     setTodos([]);
   }
 
+  function handleErase(targetIndex) {
+    const newTodos = todos.filter((el, index) => index !== targetIndex);
+
+    setTodos(newTodos);
+  }
+
   return (
     <div>
       <form onSubmit={handleClick}>
@@ -28,7 +34,13 @@ export function TodoList() {
 
       <ul>
         {todos.map((item, index) => {
-          return <li key={index}>{item}</li>;
+          return (
+            <li key={index}>
+              {item}
+              <span> </span>
+              <button onClick={() => handleErase(index)}>Erase</button>
+            </li>
+          );
         })}
       </ul>
     </div>
