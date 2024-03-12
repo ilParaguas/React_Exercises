@@ -9,6 +9,12 @@ export function TodoList() {
 		const todo = event.target.elements.todo.value
 
 		setTodos((todos) => [...todos, todo])
+
+		event.target.elements.todo.value = ''
+	}
+
+	function handleResetTodos() {
+		setTodos([])
 	}
 
 	return (
@@ -17,6 +23,7 @@ export function TodoList() {
 				<input data-testid="todo-input" name="todo" />
 				<button type="submit">Add</button>
 			</form>
+			<button onClick={handleResetTodos}>Reset</button>
 
 			<ul data-testid="todo-list">
 				{todos.map((todo, index) => (
