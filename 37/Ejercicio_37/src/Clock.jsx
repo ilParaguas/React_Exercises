@@ -19,7 +19,7 @@ export function Clock() {
   return (
     <div>
       <h2>
-        {lang === "en" ? "Hora actual:" : "Current time:"}
+        {lang === "es" ? "Hora actual:" : "Current time:"}
         {"  "}
         {date.toLocaleTimeString()}
       </h2>
