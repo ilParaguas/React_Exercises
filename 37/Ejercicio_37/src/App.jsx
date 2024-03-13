@@ -1,18 +1,29 @@
-import { Container } from "./Container";
+import { useState } from "react";
+import { Clock } from "./Clock";
+import { LanguageContext } from "./LanguageContext";
 
 export function App() {
+  const [lang, setLang] = useState("en");
+
+  function handleSetLang(language) {
+    setLang(language);
+  }
+
   return (
-    <Container title={<h1>Container title</h1>}>
-      <h2>Container body</h2>
-      <div>Hello world</div>
-      <ul>
-        List of things
-        <li>Thing 1</li>
-        <li>Thing 2</li>
-        <li>Thing 3</li>
-        <li>Thing 4</li>
-        <li>Thing 5</li>
-      </ul>
-    </Container>
+    <div>
+      <label> Language </label>
+      <select
+        name="languageSelect"
+        value={lang}
+        onChange={(e) => handleSetLang(e.target.value)}
+      >
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+      </select>
+
+      <LanguageContext.Provider value={lang}>
+        <Clock />
+      </LanguageContext.Provider>
+    </div>
   );
 }
