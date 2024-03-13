@@ -1,0 +1,15 @@
+.containerDiv {
+  padding: 5px;
+  background-color: white;
+  border-color: red;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.containerHidden {
+  display: none;
+}
+
+.containerShow {
+  display: block;
+}
