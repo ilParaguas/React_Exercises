@@ -14,7 +14,7 @@ export function App() {
       <label> Language </label>
       <select
         name="languageSelect"
-        value={lang}
+        defaultValue={lang}
         onChange={(e) => handleSetLang(e.target.value)}
       >
         <option value="es">ES</option>
