@@ -24,7 +24,7 @@ export function GithubUser({ username }) {
           <div>{user.name}</div>
         </div>
       )}
-      {error && <div>{username} not found</div>}
+      {error && <div>{error.message}</div>}
     </div>
   );
 }
