@@ -1,6 +1,5 @@
-import { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 export function Clock() {
   const lang = useContext(LanguageContext);
