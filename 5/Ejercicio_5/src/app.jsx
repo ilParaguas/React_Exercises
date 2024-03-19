@@ -1,5 +1,5 @@
-import { Hello } from "./hello";
-import { Welcome } from "./welcome";
+import { Hello } from "./Hello";
+import { Welcome } from "./Welcome";
 
 export function App() {
   return (
