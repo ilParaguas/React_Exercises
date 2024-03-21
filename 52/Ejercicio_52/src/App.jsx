@@ -9,12 +9,15 @@ export function App() {
         <Route path="/users/" element={<GithubUserList />}>
           <Route path=":username" element={<ShowGithubUser />} />
         </Route>
-        <Route path="*" element={
-          <div>
-            <p>Not found!</p>
-            <Link to="/users/"> Home </Link>
-          </div>
-        }/>
+        <Route
+          path="*"
+          element={
+            <div>
+              <p>Not found!</p>
+              <Link to="/users/"> Home </Link>
+            </div>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
