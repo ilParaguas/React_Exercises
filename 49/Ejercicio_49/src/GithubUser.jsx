@@ -22,7 +22,7 @@ export function GithubUser({ username }) {
       {error && <div>There has been an error</div>}
       {user && (
         <div>
-          <img src={user.avatar_url} />
+          <img src={user.avatar_url} width={64} />
           <div>{user.login}</div>
           <div>{user.name}</div>
         </div>
