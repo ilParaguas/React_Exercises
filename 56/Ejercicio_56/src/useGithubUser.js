@@ -11,7 +11,7 @@ const fetcher = (url) =>
   });
 
 export function useGithubUser(username) {
-  const { user, error, mutate } = useSWR(
+  const { data, error, mutate } = useSWR(
     username ? `https://api.github.com/users/${username}` : null,
     fetcher
   );
@@ -20,5 +20,5 @@ export function useGithubUser(username) {
     mutate();
   }
 
-  return { user, error, handleRefresh };
+  return { user: data, error, handleRefresh };
 }
