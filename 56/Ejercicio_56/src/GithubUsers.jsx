@@ -4,7 +4,7 @@ import { useGithubUser } from "./useGithubUser";
 export function GithubUsers() {
   const [username, setUsername] = useState("");
   const [userList, setList] = useState([]);
-  const { user, error } = useGithubUser(username);
+  const { user, error, handleRefresh } = useGithubUser(username);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -30,6 +30,7 @@ export function GithubUsers() {
           Submit
         </button>
       </form>
+      <button onClick={handleRefresh}>Refresh</button>
       <ul key={"list"}>
         {userList.map((element, index) =>
           typeof element === "string" ? (
